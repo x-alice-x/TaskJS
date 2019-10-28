@@ -1,7 +1,7 @@
 
-for (var i = 0; i < 9; i++) {
+for (var i = 0; i < 50; i++) {
   var row = createRow();
-  for (var j = 0; j < 9; j++) {
+  for (var j = 0; j < 50; j++) {
     createElement(row, i, j);
   }
 }
