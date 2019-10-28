@@ -1,7 +1,7 @@
 
-for (var i = 0; i < 49; i++) {
+for (var i = 0; i < 9; i++) {
   var row = createRow();
-  for (var j = 0; j < 49; j++) {
+  for (var j = 0; j < 9; j++) {
     createElement(row, i, j);
   }
 }
@@ -45,8 +45,9 @@ window.onload = function() {
 			for (var i = 0; i <= elems.length; i++) {
 				var tmp_x = elems[i].getAttribute('x');
 				var tmp_y = elems[i].getAttribute('y');
-				if (((tmp_x == x - 2)||(tmp_x == x - 1)||(tmp_x == x)||(tmp_x == x + 1)||(tmp_x == x + 2))
-					&&((tmp_y == y - 2)||(tmp_y == y - 1)||(tmp_y == y)||(tmp_y == y + 1)||(tmp_y == y + 2))){
+				if ((((tmp_x == x - 2)||(tmp_x == x)||(tmp_x == x + 2))&&((tmp_y == y - 2)||(tmp_y == y)||(tmp_y == y + 2)))
+					||((tmp_x == x - 2)||(tmp_x == x + 2))&&((tmp_y == y - 1)||(tmp_y == y + 1))
+					||((tmp_x == x - 1)||(tmp_x == x + 1))&&((tmp_y == y - 2)||(tmp_y == y + 2))) {
 					elems[i].id = "blue";
 				}
 			}
@@ -55,8 +56,11 @@ window.onload = function() {
 			for (var i = 0; i <= elems.length; i++) {
 				var tmp_x = elems[i].getAttribute('x');
 				var tmp_y = elems[i].getAttribute('y');
-				if (((tmp_x == x - 3)||(tmp_x == x - 2)||(tmp_x == x - 1)||(tmp_x == x)||(tmp_x == x + 1)||(tmp_x == x + 2)||(tmp_x == x + 3))
-					&&((tmp_y == y - 3)||(tmp_y == y - 2)||(tmp_y == y - 1)||(tmp_y == y)||(tmp_y == y + 1)||(tmp_y == y + 2)||(tmp_y == y + 3))){
+				if ((((tmp_x == x - 3)||(tmp_x == x)||(tmp_x == x + 3))&&((tmp_y == y - 3)||(tmp_y == y)||(tmp_y == y + 3)))
+					||(((tmp_x == x - 3)||(tmp_x == x + 3))&&((tmp_y == y - 2)||(tmp_y == y + 2)))
+					||(((tmp_x == x - 3)||(tmp_x == x + 3))&&((tmp_y == y - 1)||(tmp_y == y + 1)))
+					||(((tmp_x == x - 1)||(tmp_x == x + 1))&&((tmp_y == y - 3)||(tmp_y == y + 3)))
+					||(((tmp_x == x - 2)||(tmp_x == x + 2))&&((tmp_y == y - 3)||(tmp_y == y + 3)))){
 					elems[i].id = "red";
 				}
 			}
